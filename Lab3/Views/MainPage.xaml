@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Lab3.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Unloaded="ContentPage_Unloaded">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+            <toolkit:MediaElement
+                x:Name="mediaSound"
+                IsVisible="False"
+                ShouldAutoPlay="False"
+                Source="embed://tada.wav"
+                Volume="1" />
+
+            <Image
+                Aspect="AspectFit"
+                HeightRequest="185"
+                SemanticProperties.Description="Guillermo from dancing with the stars wins"
+                Source="dwtswinner.jpg">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnImageTapped" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Label
+                SemanticProperties.HeadingLevel="Level1"
+                Style="{StaticResource Headline}"
+                Text="Vote Every Tuesday night for Guillermo">
+                <Label.GestureRecognizers>
+                    <SwipeGestureRecognizer Direction="Right" Swiped="SwipeGestureRecognizer_Swiped" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Label
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                SemanticProperties.HeadingLevel="Level2"
+                Style="{StaticResource SubHeadline}"
+                Text="What is a computer's favourite singer?">
+                <Label.GestureRecognizers>
+                    <SwipeGestureRecognizer
+                        Command="{Binding LocCommand}"
+                        CommandParameter="SecondPage"
+                        Direction="Left" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Button
+                x:Name="CounterBtn"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Fill"
+                SemanticProperties.Hint="Counts the number of times you think click"
+                Text="Click me" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
+

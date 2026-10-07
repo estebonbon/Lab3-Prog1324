@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Lab3.Views.SecondPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Title="SecondPage">
+    <VerticalStackLayout>
+        <toolkit:MediaElement
+            x:Name="AdeleVideo"
+            Aspect="AspectFit"
+            ShouldAutoPlay="True"
+            ShouldShowPlaybackControls="True"
+            Source="embed://Adele.mp4"
+            Volume="0.1"
+            WidthRequest="500" />
+
+        <Label
+            FontSize="Large"
+            HorizontalOptions="Center"
+            Text="A Dell!"
+            VerticalOptions="Center" />
+
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="40">
+            <Button
+                Clicked="Play_Clicked"
+                HorizontalOptions="Start"
+                Text="Play"
+                BackgroundColor="PaleGreen"/>
+
+            <Button
+                Clicked="Pause_Clicked"
+                HorizontalOptions="End"
+                Text="Pause" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
